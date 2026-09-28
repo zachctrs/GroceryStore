@@ -1,5 +1,6 @@
 /**
  * GroceryStore
+ * @author zachary contreras
  */
 public class GroceryStore {
 
@@ -30,5 +31,29 @@ public class GroceryStore {
         System.out.println(names[i] + "\t$" + prices[i] + "\t" + stocks[i]);
       }
     }
+  /**
+   * Queries an item in the store via linear search and, if found, increases the stock
+   * of the item by the specified number. If item is not found, print error message.
+   * @param names container arary for names
+   * @param stocks container array for stock values
+   * @param target name of product to add items
+   * @param amount amount of product to add
+   */
+  public static void restockItem(String[] names, int[] stocks, String target, int amount){
+    //checkpoint for printing error message
+    boolean found = false;
+    //search for item index by name
+    for(int i = 0; i < MAX_ITEMS; i++){
+      if(names[i].compareTo(target) == 0){
+        //append amount
+        stocks[i] += amount;
+        found = true;
+      }
+    }
+
+    if(!found){
+      System.out.println("Item not found.");
+    }
+    
   }
 }
