@@ -31,6 +31,7 @@ public class GroceryStore {
         System.out.println(names[i] + "\t$" + prices[i] + "\t" + stocks[i]);
       }
     }
+  }
   /**
    * Queries an item in the store via linear search and, if found, increases the stock
    * of the item by the specified number. If item is not found, print error message.
@@ -56,4 +57,4 @@ public class GroceryStore {
     }
     
   }
-}
+}  
