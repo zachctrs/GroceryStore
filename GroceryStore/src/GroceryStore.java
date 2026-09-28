@@ -27,6 +27,13 @@ public class GroceryStore {
     String inputName = "";
     int addItems = 0;
 
+    //TESTING DATA
+    itemNames = new String[]{"Apples", "Bananas", "Tangerines" , "", "Cups" , "Spoons" , "Forks", "Knives", "Potatoes", "Tomatoes"};
+
+    itemPrices = new double[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+    itemStocks = new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+
     //continuous input loop. 1 prints inventory, 2 restocks items, 3 exits the program
     while(!isDone){
       option = -1;
@@ -37,7 +44,8 @@ public class GroceryStore {
       try {
           option = input.nextInt();
       } catch (InputMismatchException e) {
-        System.out.println("Please enter a valid option.");
+        //System.out.println("Please enter a valid option.");
+        input.nextLine();
       }
       
       switch(option){
@@ -54,10 +62,12 @@ public class GroceryStore {
               addItems = input.nextInt();
           } catch (InputMismatchException e) {
             System.out.println("Please input a valid number.");
+            input.nextLine();
             break;
           }
           //implmented in separate branch
           restockItem(itemNames, itemStocks, inputName, addItems);
+          break;
 
         case 3:
           System.out.println("Terminating program.");
@@ -67,8 +77,9 @@ public class GroceryStore {
           break;
       }
 
-
+      
     }
+    input.close();
 
   }
 
@@ -83,8 +94,8 @@ public class GroceryStore {
   public static void printInventory(String[] names, double[] prices, int[] stocks){
     //iterate over each index, but only print data if the name is not null
     for(int i = 0; i < MAX_ITEMS; i++){
-      if(names[i] != null){
-        System.out.println(names[i] + "\t$" + prices[i] + "\t" + stocks[i]);
+      if(names[i] != null && !names[i].isEmpty()){
+        System.out.println(names[i] + "\t\t$" + prices[i] + "\t" + stocks[i]);
       }
     }
   }
@@ -101,7 +112,8 @@ public class GroceryStore {
     boolean found = false;
     //search for item index by name
     for(int i = 0; i < MAX_ITEMS; i++){
-      if(names[i].compareTo(target) == 0){
+      //convert to all lowercase to eliminate case sensitivity
+      if(names[i].toLowerCase().compareTo(target.toLowerCase()) == 0){
         //append amount
         stocks[i] += amount;
         found = true;
