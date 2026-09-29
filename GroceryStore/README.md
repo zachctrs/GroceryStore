@@ -1,18 +1,11 @@
-## Getting Started
+This project is made to resemble the basic functionality of a grocery store
+in which you can list the inventory and add to the stock.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+The program works by using 3 aligned arrays to hold the various member fields of each grocery store item
 
-## Folder Structure
+My teammates unfortunately seem to have completed and submitted the project without my input, so I
+decided to hammer it out on my own before the due date... this project is all of my work without any
+collaboration.
+The program should be self contained... it compiles on modern systems and requires no outside dependencies besides the JRE itself.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+UML Diagram attached as PNG in the folder.
