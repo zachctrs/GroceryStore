@@ -1,0 +1,12 @@
+@startuml classdiagram
+skinparam classattributeiconsize 0
+class GroceryStore{
+-MAX_ITEMS : int
+-itemNames : String[]
+-itemPrices : double[]
+-itemStocks : int[]
++main(args : String) : void
+-printInventory(names : String[], prices: double[], stocks: int[]) : void
+-restockItem(names : String[], stocks: int[], item: String, stock:  int) : void
+}
+@enduml
